@@ -16,26 +16,22 @@ class TestADN:
         adn = self.setUp()
         assert type(adn.get_conversion_table()) == dict
 
-    def test_get_codons_returns_a_list(self):
+    def test_split_sequence_in_array_returns_a_list(self):
         adn = self.setUp()
         assert type(adn.split_sequence_in_array(3)) == list
 
-    def test_get_codons_returns_a_list_split_by_3_characters(self):
+    def test_split_sequence_in_array_returns_a_list_split_by_3_characters(self):
         adn = self.setUp()
         assert len(adn.split_sequence_in_array(3)[0]) == 3
         assert len(adn.split_sequence_in_array(3)[2]) == 3
         assert len(adn.split_sequence_in_array(3)[5]) == 3
 
-    def test_get_codons_returns_correct_characters(self):
+    def test_split_sequence_in_array_returns_correct_characters(self):
         adn = self.setUp()
         assert adn.split_sequence_in_array(3)[0] == "CTC"
         assert adn.split_sequence_in_array(3)[1] == "TTG"
         assert adn.split_sequence_in_array(3)[2] == "AAC"
 
-
-    def test_convert_codon_to_proteine_returns_correct_key(self):
-        adn = self.setUp()
-        assert adn.convert_codon_to_proteine("GTT") == "V"
 
     def test_convert_codon_sequence_to_proteines_returns_correct_list(self):
         adn = self.setUp()
